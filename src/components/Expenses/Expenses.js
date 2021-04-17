@@ -1,7 +1,7 @@
 import './Expenses.css';
 import ExpenseItem from './ExpenseItem'
-import Card from './Card'
-function Expenses({ expenses }) {
+import Card from '../UI/Card'
+const Expenses = ({ expenses }) => {
     return <Card className="expenses">
         <ExpenseItem title={expenses[0].title}
             amount={expenses[0].amount}

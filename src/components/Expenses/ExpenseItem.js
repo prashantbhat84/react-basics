@@ -1,7 +1,7 @@
 import './ExpenseItem.css'
 import ExpenseDate from './ExpenseDate'
-import Card from './Card'
-function ExpenseItem({ date, title, amount }) {
+import Card from '../UI/Card'
+const ExpenseItem = ({ date, title, amount }) => {
     const expenseTitle = title;
     const expenseAmount = amount;
     return <Card className="expense-item">
