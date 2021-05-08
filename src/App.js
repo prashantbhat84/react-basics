@@ -40,7 +40,7 @@ const App = () => {
   const resetForm = () => {
     setShowForm(false);
   }
-  console.log(showForm);
+
   let formDisplay = <AddNewExpense changedisplay={addFormExpenseHandler} />;
   if (showForm) {
     formDisplay = <NewExpense resetForm={resetForm} addNewExpense={addExpenseHandler} />;
@@ -48,8 +48,7 @@ const App = () => {
 
   return (
     <div>
-      {/* <AddNewExpense changedisplay={addFormExpenseHandler} /> */}
-      {/* <NewExpense addNewExpense={addExpenseHandler} /> */}
+
       {formDisplay}
       <Expenses expenses={expenses} />
 

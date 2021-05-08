@@ -4,12 +4,16 @@
   height: 100px;
   display: flex;
   align-items: center;
+  justify-content: center;
   border: 5px 0 5px 0;
   border-radius: 2px;
+  width: 60%;
+  margin: 0 auto;
+  margin-top: 1.5rem;
+  border-radius: 10px;
 }
 .addnew__button {
-  margin: auto;
-  width: 200px;
+  width: 30%;
   height: 70px;
   background: #000080;
   border-radius: 10px;
