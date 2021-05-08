@@ -1,5 +1,6 @@
 import Expenses from './components/Expenses/Expenses'
 import NewExpense from './components/NewExpense/NewExpense'
+import AddNewExpense from './components/NewExpense/AddNewExpense'
 import { useState } from 'react'
 const DUMMY_EXPRENSES = [
   {
@@ -24,16 +25,32 @@ const DUMMY_EXPRENSES = [
 ];
 const App = () => {
   const [expenses, setExpenses] = useState(DUMMY_EXPRENSES);
+  const [showForm, setShowForm] = useState(false);
   const addExpenseHandler = (expense) => {
     setExpenses(prevExpense => {
       return [expense, ...prevExpense]
     })
 
   }
+  const addFormExpenseHandler = () => {
+    setShowForm(prevState => {
+      return !prevState;
+    })
+  }
+  const resetForm = () => {
+    setShowForm(false);
+  }
+  console.log(showForm);
+  let formDisplay = <AddNewExpense changedisplay={addFormExpenseHandler} />;
+  if (showForm) {
+    formDisplay = <NewExpense resetForm={resetForm} addNewExpense={addExpenseHandler} />;
+  }
+
   return (
     <div>
-
-      <NewExpense addNewExpense={addExpenseHandler} />
+      {/* <AddNewExpense changedisplay={addFormExpenseHandler} /> */}
+      {/* <NewExpense addNewExpense={addExpenseHandler} /> */}
+      {formDisplay}
       <Expenses expenses={expenses} />
 
     </div>

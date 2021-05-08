@@ -1,5 +1,5 @@
 import './Expenses.css';
-import ExpenseItem from './ExpenseItem'
+import ExpensesList from './ExpensesList'
 import Card from '../UI/Card'
 import { useState } from 'react'
 
@@ -15,17 +15,17 @@ const Expenses = ({ expenses }) => {
     }
 
 
-    let filteredArray = []
-    filteredArray = expenses.filter(expense => {
-        console.log('inside filter');
+
+    const filteredArray = expenses.filter(expense => {
+
         return expense.date.getFullYear().toString() === selected
     })
 
 
+
     return <Card className="expenses">
         <ExpensesFilter selected={selected} yearPicker={yearPicker} />
-
-        {filteredArray.map((item) => <ExpenseItem key={item.id} title={item.title} amount={item.amount} date={item.date} />)}
+        <ExpensesList items={filteredArray} />
     </Card>
 
 }
