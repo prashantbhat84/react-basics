@@ -7,20 +7,25 @@ import ExpensesFilter from './ExpenseFilter';
 
 
 const Expenses = ({ expenses }) => {
-    const [selected, setSelected] = useState('')
+    const [selected, setSelected] = useState('2020')
 
     const yearPicker = (e) => {
 
         setSelected(e.target.value)
     }
-    // const filteredexpense = (expenses => {
-    //     return expenses.date.getFullYear() === selected
-    // })
-    console.log(selected);
+
+
+    let filteredArray = []
+    filteredArray = expenses.filter(expense => {
+        console.log('inside filter');
+        return expense.date.getFullYear().toString() === selected
+    })
+
+
     return <Card className="expenses">
         <ExpensesFilter selected={selected} yearPicker={yearPicker} />
 
-        {expenses.map((item) => <ExpenseItem key={item.id} title={item.title} amount={item.amount} date={item.date} />)}
+        {filteredArray.map((item) => <ExpenseItem key={item.id} title={item.title} amount={item.amount} date={item.date} />)}
     </Card>
 
 }
