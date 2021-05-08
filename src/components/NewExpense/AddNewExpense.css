@@ -1,0 +1,17 @@
+.addnew__container {
+  width: 100%;
+  background: #7b68ee;
+  height: 100px;
+  display: flex;
+  align-items: center;
+  border: 5px 0 5px 0;
+  border-radius: 2px;
+}
+.addnew__button {
+  margin: auto;
+  width: 200px;
+  height: 70px;
+  background: #000080;
+  border-radius: 10px;
+  color: white;
+}
