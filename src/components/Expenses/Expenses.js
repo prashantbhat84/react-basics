@@ -7,7 +7,7 @@ import ExpensesFilter from './ExpenseFilter';
 
 
 const Expenses = ({ expenses }) => {
-    const [selected, setSelected] = useState('')
+    const [selected, setSelected] = useState('2021')
 
     const yearPicker = (e) => {
 
